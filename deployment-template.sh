@@ -5,6 +5,8 @@ aws configure set region $ECS_REGION
 ecs-cli configure profile --profile-name ECSProfile --access-key $ECS_ACCESS_KEY --secret-key $ECS_SECRET_KEY
 ecs-cli configure --cluster $4 --default-launch-type FARGATE --region $ECS_REGION --config-name ECSClusterConfig
 
+echo "$(ecs-cli --version)"
+
 services=$(aws ecs describe-services --services $1 --cluster $4 --region $ECS_REGION | jq '.services')
 if [ "$services" = "[]" ] && [ $5 = "Yes" ]
 then
