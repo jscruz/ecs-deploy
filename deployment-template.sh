@@ -1,4 +1,6 @@
 #!/bin/bash
+set -x
+
 aws configure set aws_access_key_id $6
 aws configure set aws_secret_access_key $7
 aws configure set region $8
