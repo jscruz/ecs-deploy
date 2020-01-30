@@ -1,2 +1,2 @@
 # ecs-deploy
-ECS deployment script
+Deploys a service to a Fargate cluster with or without service discovery
